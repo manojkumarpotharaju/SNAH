@@ -1,0 +1,22 @@
+###
+
+GET http://localhost:4004/odata/v4/back-order/BackOrderItems
+
+###
+
+POST http://localhost:4004/odata/v4/back-order/BackOrderItems
+Content-Type: application/json
+
+{
+ "soldTo" : "203800",
+ "search" : "",
+ "searchBy" : "",
+ "fromDate" : "",
+ "toDate" : "",
+ "status" : [ ],
+ "sort" : "orderDate", 
+ "dir" : "desc",
+ "currentPage" : 0,
+ "pageSize" : 12,
+ "orderType" : [ ]
+}
