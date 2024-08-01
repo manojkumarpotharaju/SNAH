@@ -8,11 +8,10 @@
 # This is a YAML-file. YAML is an indentation-sensitive file format. Please make sure to properly indent changes to it.
 ###
 
-
-
 ### General project setup
 general:
   inferBuildTool: true
+  buildTool: "mta"
 
 ### Step-specific configuration
 steps:
@@ -22,11 +21,45 @@ steps:
   artifactPrepareVersion:
     versioningType: cloud_noTag
 
+  npmExecuteLint:
+    failOnError: true
+
+  cloudFoundryDeploy:
+    mtaDeployParameters: "-f --version-rule ALL"
+
+  tmsUpload:
+    nodeName: "QAS"
+    credentialsId: "transportmgmt"
+
 ### Stage-specific configuration
 stages:
-  'Confirm':
+  "Confirm":
     manualConfirmation: false
+  Build:
+    mavenExecuteStaticCodeChecks: false
+    npmExecuteLint: true
 
+  Additional Unit Tests:
+    npmExecuteScripts: false
+    karmaExecuteTests: false
+
+  Acceptance:
+    cloudFoundryDeploy: false
+    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
+    cfOrg: "d0a64f88trial"
+    cfSpace: "dev"
+    cfAppName: "app"
+    cfCredentialsId: "deploy-to-cf"
+    uiVeri5ExecuteTests: false
+
+  Release:
+    cloudFoundryDeploy: true
+    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
+    cfOrg: "d0a64f88trial"
+    cfSpace: "dev"
+    cfAppName: "app"
+    cfCredentialsId: "deploy-to-cf"
+    tmsUpload: true
 #  Integration:
 #    credentials:
 #      - alias: 'mySystemAlias'
