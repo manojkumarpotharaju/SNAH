@@ -14,5 +14,5 @@ entity BackOrderItem {
     orderPlacedBy      : String(255);
     paymentTerms       : String(255);
     orderType          : String(20);
-    soldTo             : String(255);  
+    soldTo             : String;  
 }
