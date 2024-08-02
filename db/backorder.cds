@@ -1,7 +1,7 @@
 namespace backorder;
 
 entity BackOrderItem {
-    key productCode    : String;
+    key productCode    : String(255);
     quantity           : Integer;
     dealerPrice        : Decimal(10, 2);
     totalPrice         : Decimal(10, 2);
