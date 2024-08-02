@@ -22,8 +22,8 @@ stages:
   Malware Scan:
     malwareExecuteScan: false
   Release:
-    tmsExport: false
-    tmsUpload: false
+    tmsExport: true
+    tmsUpload: true
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "d0a64f88trial"
     cfSpace: "dev"
@@ -38,3 +38,6 @@ steps:
     mtaDeployParameters: "-f --version-rule ALL"
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
+  tmsUpload:
+    nodeName: "QAS"
+    credentialsId: "transportmgmt"
