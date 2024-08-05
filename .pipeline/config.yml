@@ -14,8 +14,8 @@ stages:
     npmExecuteLint: true
   Acceptance:
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
-    cfOrg: "d0a64f88trial"
-    cfSpace: "dev"
+    cfOrg: "d0a64f88trial_qas-yj4si4ur"
+    cfSpace: "QAS"
     deployType: "standard"
     cloudFoundryDeploy: true
     npmExecuteEndToEndTests: true
@@ -25,8 +25,8 @@ stages:
     tmsExport: true
     tmsUpload: true
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
-    cfOrg: "d0a64f88trial"
-    cfSpace: "dev"
+    cfOrg: "d0a64f88trial_qas-yj4si4ur"
+    cfSpace: "QAS"
     deployType: "standard"
     cloudFoundryDeploy: true
   Additional Unit Tests:
