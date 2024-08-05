@@ -9,7 +9,7 @@ entity BackOrderItem {
     erpOrderNumber     : String(20);
     orderStatus        : Integer;
     orderDate          : DateTime;
-    hybrisOrderNumber  : String(200);
+    hybrisOrderNumber  : String(255);
     poNumber           : String(20);
     orderPlacedBy      : String(255);
     paymentTerms       : String(255);
