@@ -60,7 +60,7 @@ resources:
       service-plan: application
       path: ./xs-security.json
       config:
-        xsappname: SNAH_B2B_BackOrderHistory-${org}-${space}
+        xsappname: SNAH_B2B_BackOrderHistory
         tenant-mode: dedicated
   - name: SNAH_B2B_BackOrderHistory-db
     type: com.sap.xs.hdi-container
